@@ -41,4 +41,10 @@ public class FarmaciaDAOImpl implements FarmaciaDAO {
 		return farmacia;//(Farmacia) sessionFactory.getCurrentSession().load(Farmacia.class, id);
 	}
 
+	@Override
+	public void updateFarmacia(Farmacia farmacia) {
+		System.out.println(">>>>>>>>>> outra farmacia: " + farmacia);
+		sessionFactory.getCurrentSession().update(farmacia);
+	}
+
 }

@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dicadefarmacia.domain.Farmacia;
 import br.com.dicadefarmacia.domain.Usuario;
-import br.com.dicadefarmacia.infra.constant.View;
-import br.com.dicadefarmacia.infra.fake.ContentFake;
 import br.com.dicadefarmacia.service.FarmaciaService;
 
 @Controller
@@ -50,11 +49,24 @@ public class FarmaciaController {
     }
     
     @RequestMapping("/farmacia/edit/{farmaciaId}")
-    public ModelAndView search(Map<String, Object> map, @PathVariable("farmaciaId") Long farmaciaId) throws IOException {
+    public ModelAndView search(@PathVariable("farmaciaId") Long farmaciaId) throws IOException {
 
-    	Farmacia farmacia = farmaciaService.buscaFarmacia(farmaciaId);
-		System.out.println("Farmacia: " + farmacia);
-		return new ModelAndView("farmacia", "farmacia", farmacia);
+    	ModelAndView mav = new ModelAndView("editFarmacia");
+    	Farmacia farm = farmaciaService.buscaFarmacia(farmaciaId);
+    	mav.addObject("editFarmacia", farm);
+    	return mav;
 	}
+    
+    @RequestMapping(value="/farmacia/updateFarmacia", method=RequestMethod.POST)
+    public String update(@ModelAttribute("editFarmacia") Farmacia farmacia, BindingResult result, SessionStatus status) {
+    	//validator.validate(farmacia, result);
+    	System.out.println("----------> " + farmacia);
+    	if (result.hasErrors()) {
+    		return "editFarmacia";
+    	}
+    	farmaciaService.updateFarmacia(farmacia);
+    	status.setComplete();
+    	return "redirect:/farmacia";
+    }
 
 }

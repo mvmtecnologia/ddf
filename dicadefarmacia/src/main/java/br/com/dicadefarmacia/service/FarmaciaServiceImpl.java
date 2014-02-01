@@ -10,29 +10,30 @@ import br.com.dicadefarmacia.domain.Farmacia;
 import br.com.dicadefarmacia.infra.dao.FarmaciaDAO;
 
 @Service
+@Transactional
 public class FarmaciaServiceImpl implements FarmaciaService {
 
 	@Autowired
     private FarmaciaDAO farmaciaDAO;
 	
-	@Transactional
 	public void addFarmacia(Farmacia farmacia) {
 		farmaciaDAO.addFarmacia(farmacia);
 	}
 
-	@Transactional
 	public List<Farmacia> listFarmacia() {
 		return farmaciaDAO.listFarmacia();
 	}
 
-	@Transactional
 	public void removeFarmacia(Long id) {
 		farmaciaDAO.removeFarmacia(id);
 	}
 
-	@Transactional
 	public Farmacia buscaFarmacia(Long id) {
 		return farmaciaDAO.buscaFarmacia(id);
+	}
+
+	public void updateFarmacia(Farmacia farmacia) {
+		farmaciaDAO.updateFarmacia(farmacia);
 	}
 
 }

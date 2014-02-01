@@ -10,4 +10,5 @@ public interface FarmaciaDAO {
     public List<Farmacia> listFarmacia();
     public void removeFarmacia(Long id);
     public Farmacia buscaFarmacia(Long id);
+    public void updateFarmacia(Farmacia farmacia);
 }
