@@ -1,9 +1,17 @@
 package br.com.dicadefarmacia.domain;
 
+import java.io.Serializable;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -11,7 +19,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="USUARIO")
-public class Usuario {
+@SuppressWarnings("serial")
+public class Usuario implements Serializable {
 
 	@Id
     @Column(name="ID")
@@ -27,6 +36,18 @@ public class Usuario {
 	@Column(name="EMAIL")
 	private String email;
 
+	@OneToOne(cascade=CascadeType.ALL)  
+    @JoinTable(name="USER_ROLES", joinColumns = {@JoinColumn(name="ID_USER", referencedColumnName="id")},  
+        inverseJoinColumns = {@JoinColumn(name="ID_ROLE", referencedColumnName="id")}  
+    )  
+    private Role role;
+	
+	@Column(name="SENHA")
+	private String senha;
+	
+	@OneToMany
+	@JoinColumn(name="id_usuario")
+	private Set<Farmacia> farmacias;
 	
 	public Long getId() {
 		return id;
@@ -58,6 +79,30 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public Set<Farmacia> getFarmacias() {
+		return farmacias;
+	}
+
+	public void setFarmacias(Set<Farmacia> farmacias) {
+		this.farmacias = farmacias;
 	}
 
 }

@@ -1,5 +1,7 @@
 package br.com.dicadefarmacia.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "REMEDIO")
-public class Remedio {
+@SuppressWarnings("serial")
+public class Remedio implements Serializable {
 
 	@Id
 	@Column(name = "ID")
@@ -30,8 +33,12 @@ public class Remedio {
 	@Column(name = "FOTO")
 	private String foto;
 
-	@Column(name = "PRECO")
-	private Double preco;
+	@Column(name = "DOSAGEM")
+	private String dosagem;
+	
+	@Column(name = "FORMA")
+	private String forma;
+	
 
 	@Column(name = "GENERICO")
 	private Boolean generico;
@@ -76,20 +83,28 @@ public class Remedio {
 		this.foto = foto;
 	}
 
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-
 	public Boolean getGenerico() {
 		return generico;
 	}
 
 	public void setGenerico(Boolean generico) {
 		this.generico = generico;
+	}
+
+	public String getDosagem() {
+		return dosagem;
+	}
+
+	public void setDosagem(String dosagem) {
+		this.dosagem = dosagem;
+	}
+
+	public String getForma() {
+		return forma;
+	}
+
+	public void setForma(String forma) {
+		this.forma = forma;
 	}
 
 }

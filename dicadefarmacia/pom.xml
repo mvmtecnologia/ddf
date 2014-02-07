@@ -35,6 +35,7 @@
 	<properties>
 		<java.version>1.7</java.version>
 		<spring.version>3.2.5.RELEASE</spring.version>
+		<springSecurity.version>3.2.0.RELEASE</springSecurity.version>
 		<cglib.version>2.2.2</cglib.version>
 		<jetty.version>6.1.10</jetty.version>
 		<hibernate.version>4.1.9.Final</hibernate.version>
@@ -69,6 +70,18 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${springSecurity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${springSecurity.version}</version>
+		</dependency>
+
 		<!-- CGLib for @Configuration -->
 		<dependency>
 			<groupId>cglib</groupId>
@@ -97,40 +110,40 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- Hibernate 4 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<!-- JDBC Mysql -->
 		<dependency>
-		    <groupId>mysql</groupId>
-		    <artifactId>mysql-connector-java</artifactId>
-		    <version>5.1.27</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.27</version>
 		</dependency>
-		
+
 		<!-- GSON do Google -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>1.7.3</version>    
+			<version>1.7.3</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjweaver</artifactId>
-		    <version>1.7.3</version>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.3</version>
 		</dependency>
-		
+
 		<!-- Apache Commons -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

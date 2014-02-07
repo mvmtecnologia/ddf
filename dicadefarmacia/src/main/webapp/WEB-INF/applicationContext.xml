@@ -58,6 +58,8 @@
 			<list>
 				<value>br.com.dicadefarmacia.domain.Farmacia</value>
 				<value>br.com.dicadefarmacia.domain.Remedio</value>
+				<value>br.com.dicadefarmacia.domain.RemedioFarmacia</value>
+				<value>br.com.dicadefarmacia.domain.Role</value>
 				<value>br.com.dicadefarmacia.domain.Usuario</value>
 			</list>
 		</property>

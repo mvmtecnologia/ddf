@@ -2,8 +2,11 @@ package br.com.dicadefarmacia.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -50,6 +53,10 @@ public class Farmacia {
 
 	@Column(name="END_PAIS")
 	private String pais;
+	
+	@ManyToOne(targetEntity = Usuario.class, fetch = FetchType.EAGER)
+	@JoinColumn(name="id_usuario")
+	private Usuario usuario;
 	
 	public Long getId() {
 		return id;
@@ -145,6 +152,14 @@ public class Farmacia {
 
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
