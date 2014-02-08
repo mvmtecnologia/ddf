@@ -1,12 +1,13 @@
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <footer>
 	<div class="span4 right">
-		<a href="/sobre">Sobre</a>
+		<a id="sobre" href="/sobre"><spring:message code="footer.a.sobre.label" /></a>
 	</div>
 	<div class="span4 right">
-		<a href="/termoUso">Termo de Uso</a>
+		<a id="termouso" href="/termoUso"><spring:message code="footer.a.termouso.label" /></a>
 	</div>
 	<div class="span4 right">
-		<a href="/politica">Política</a>
+		<a id="politica" href="/politica"><spring:message code="footer.a.politica.label" /></a>
 	</div>
 </footer>
 
