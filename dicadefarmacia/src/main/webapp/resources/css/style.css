@@ -35,6 +35,10 @@ html,body {
 	text-align: center;
 }
 
+.right {
+	text-align: right;
+}
+
 strong {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
@@ -176,14 +180,13 @@ h2 {
 
 /* MAIN SECTIONS */
 #home {
-	width: 100%;
-	height: 100%;
 	color: #FFF;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	background-attachment: fixed; /* FIXED FOR IE */
+	padding: 50px 50px 50px 50px;
 }
 
 p {
@@ -202,7 +205,7 @@ ul{
 .contactTime {background: url("../img/icons/icon-time-grey.png") no-repeat scroll left 7px transparent;}
 
 header {
-	padding: 20px 0;
+	padding: 10px 0px;
 	top: 0;
     position: absolute;
     width: 100%;
@@ -210,32 +213,11 @@ header {
 }
 
 footer {
-	padding: 20px 0;
+	padding: 10px 0px;
 	bottom: 0;
     position: absolute;
     width: 100%;
 	background-color: #ccc;
-}
-
-footer p.copyright {
-	color: #777;
-}
-
-footer a {
-	color: #777;
-	text-decoration: none;
-}
-
-footer a:hover {
-	color: #ccc;
-	text-decoration: none;
-}
-
-/* HOME  */
-#home h1 {
-	position: relative;
-	margin: 15% auto 0px auto;
-	z-index: 999;
 }
 
 .flexslider ul li h2 {
@@ -678,21 +660,17 @@ textarea.error {
 .button {
 	font-family: 'Open Sans Condensed', sans-serif;
 	border: none;
-	height: 55px;
+	height: 30px;
+	width: 90px;
 	display: inline-block;
 	cursor: pointer;
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 	color: #fff;
-	line-height: 55px;
+	line-height: 30px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	position: relative;
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
-	-webkit-appearance: none;
 }
 
 .button:hover,.button:active {
