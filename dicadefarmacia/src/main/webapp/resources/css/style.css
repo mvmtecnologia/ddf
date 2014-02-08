@@ -187,56 +187,6 @@ h2 {
 	background-attachment: fixed; /* FIXED FOR IE */
 }
 
-#acampamento {
-	padding: 70px 0px 50px;
-}
-
-#entrevistas {
-	padding: 70px 0px 50px;
-}
-
-#fotosVideos {
-	padding: 70px 0px 50px;
-}
-
-#inscricao {
-	padding: 70px 0px 50px;
-}
-
-#local {
-	padding: 70px 0px 50px;
-}
-
-#quelevar {
-	padding: 70px 0px 50px;
-}
-
-#adoteJovem {
-	padding: 70px 0px 50px;
-}
-
-#contato {
-	padding: 70px 0px 50px;
-}
-
-#informacoesImportantes {
-	padding: 70px 0px 50px;
-}
-
-/* BLOCK CONTACT RIGHT */
-
-#contato .info {
-    background:#ccc; 
-    line-height:25px;
-    padding: 5px 10px;
-    margin-bottom: 5px;
-}
-
-#contato .info p {
-    color:#777;
-    padding-left: 17px;
-}
-
 p {
 	font-size: 16px;
 	color:#777;
@@ -252,8 +202,19 @@ ul{
 .contactEmail {background: url("../img/icons/icon-email-grey.png") no-repeat scroll left 9px transparent;}
 .contactTime {background: url("../img/icons/icon-time-grey.png") no-repeat scroll left 7px transparent;}
 
+header {
+	padding: 20px 0;
+	top: 0;
+    position: absolute;
+    width: 100%;
+	background-color: #ccc;
+}
+
 footer {
 	padding: 20px 0;
+	bottom: 0;
+    position: absolute;
+    width: 100%;
 	background-color: #ccc;
 }
 
