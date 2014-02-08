@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <jsp:include page="./includes/metahead.jsp" />
 </head>
-<body
+<body>
 	<!-- HEADER  -->
 	<jsp:include page="./includes/header.jsp" />
 	<!-- END HEADER -->
