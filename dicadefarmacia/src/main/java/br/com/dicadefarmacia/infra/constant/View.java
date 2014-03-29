@@ -9,6 +9,11 @@ public final class View {
 
 	public static final String HOME = "home";
 	public static final String LOGIN = "login";
+	public static final String ADMIN = "admin";
+	public static final String ADMIN_FARMACIA = "adminFarmacia";
+	public static final String FARMACIA = "farmacia";
+	public static final String USUARIO = "usuario";
+	public static final String REMEDIO = "remedio";
 	public static final String LIST_CONTENT = "list-content";
 	
 }

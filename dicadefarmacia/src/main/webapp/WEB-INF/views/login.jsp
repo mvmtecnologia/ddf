@@ -1,4 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <jsp:include page="./includes/header.jsp" />
 <!-- Custom styles for this template -->
 <link href="./resources/css/login.css" rel="stylesheet">
@@ -11,11 +12,13 @@
 
     <div class="container">
 
-        <form class="form-signin" role="form">
+        <form:form class="form-signin" method="post" action="admin.html" commandName="usuario"
+            role="form"
+        >
             <input type="email" class="form-control" placeholder="E-mail" required autofocus>
             <input type="password" class="form-control" placeholder="Senha" required>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-        </form>
+        </form:form>
 
     </div>
 

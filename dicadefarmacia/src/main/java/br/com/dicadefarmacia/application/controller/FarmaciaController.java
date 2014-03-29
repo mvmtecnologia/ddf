@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dicadefarmacia.domain.Farmacia;
 import br.com.dicadefarmacia.domain.Usuario;
+import br.com.dicadefarmacia.infra.constant.URL;
 import br.com.dicadefarmacia.service.FarmaciaService;
 
 /**
@@ -28,50 +29,51 @@ import br.com.dicadefarmacia.service.FarmaciaService;
 @Configuration
 @ComponentScan("br.com.dicadefarmacia.service")
 public class FarmaciaController {
-	
+
 	@Autowired
-    private FarmaciaService farmaciaService;
- 
-    @RequestMapping("/farmacia")
-    public String listFarmacia(Map<String, Object> map) {
-        map.put("farmacia", new Usuario());
-        map.put("farmaciaLista", farmaciaService.listFarmacia());
-        return "farmacia";
-    }
+	private FarmaciaService farmaciaService;
 
-    
-    @RequestMapping(value = "/farmacia/add", method = RequestMethod.POST)
-    public String addFarmacia(@ModelAttribute("farmacia") Farmacia farmacia, BindingResult result) {
-        farmaciaService.addFarmacia(farmacia);
-        return "redirect:/farmacia";
-    }
-    
- 
-    @RequestMapping("/farmacia/delete/{farmaciaId}")
-    public String deleteFarmacia(@PathVariable("farmaciaId") Long farmaciaId) {
-        farmaciaService.removeFarmacia(farmaciaId);
-        return "redirect:/farmacia";
-    }
-    
-    @RequestMapping("/farmacia/edit/{farmaciaId}")
-    public ModelAndView search(@PathVariable("farmaciaId") Long farmaciaId) throws IOException {
-
-    	ModelAndView mav = new ModelAndView("editFarmacia");
-    	Farmacia farm = farmaciaService.buscaFarmacia(farmaciaId);
-    	mav.addObject("editFarmacia", farm);
-    	return mav;
+	@RequestMapping(URL.FARMACIA)
+	public String listFarmacia(Map<String, Object> map) {
+		map.put("farmacia", new Usuario());
+		map.put("farmaciaLista", farmaciaService.listFarmacia());
+		return "farmacia";
 	}
-    
-    @RequestMapping(value="/farmacia/updateFarmacia", method=RequestMethod.POST)
-    public String update(@ModelAttribute("editFarmacia") Farmacia farmacia, BindingResult result, SessionStatus status) {
-    	//validator.validate(farmacia, result);
-    	System.out.println("----------> " + farmacia);
-    	if (result.hasErrors()) {
-    		return "editFarmacia";
-    	}
-    	farmaciaService.updateFarmacia(farmacia);
-    	status.setComplete();
-    	return "redirect:/farmacia";
-    }
+
+	@RequestMapping(value = "/farmacia/add", method = RequestMethod.POST)
+	public String addFarmacia(@ModelAttribute("farmacia") Farmacia farmacia,
+			BindingResult result) {
+		farmaciaService.addFarmacia(farmacia);
+		return "redirect:/farmacia";
+	}
+
+	@RequestMapping("/farmacia/delete/{farmaciaId}")
+	public String deleteFarmacia(@PathVariable("farmaciaId") Long farmaciaId) {
+		farmaciaService.removeFarmacia(farmaciaId);
+		return "redirect:/farmacia";
+	}
+
+	@RequestMapping("/farmacia/edit/{farmaciaId}")
+	public ModelAndView search(@PathVariable("farmaciaId") Long farmaciaId)
+			throws IOException {
+
+		ModelAndView mav = new ModelAndView("editFarmacia");
+		Farmacia farm = farmaciaService.buscaFarmacia(farmaciaId);
+		mav.addObject("editFarmacia", farm);
+		return mav;
+	}
+
+	@RequestMapping(value = "/farmacia/updateFarmacia", method = RequestMethod.POST)
+	public String update(@ModelAttribute("editFarmacia") Farmacia farmacia,
+			BindingResult result, SessionStatus status) {
+		// validator.validate(farmacia, result);
+		System.out.println("----------> " + farmacia);
+		if (result.hasErrors()) {
+			return "editFarmacia";
+		}
+		farmaciaService.updateFarmacia(farmacia);
+		status.setComplete();
+		return "redirect:/farmacia";
+	}
 
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.com.dicadefarmacia.domain.Usuario;
+import br.com.dicadefarmacia.infra.constant.URL;
 import br.com.dicadefarmacia.service.UsuarioService;
 
 /**
@@ -28,7 +29,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-	@RequestMapping("/")
+	@RequestMapping(URL.USUARIO)
 	public String listUsuarios(Map<String, Object> map) {
 		map.put("usuario", new Usuario());
 		map.put("usuarioList", usuarioService.listUsuario());

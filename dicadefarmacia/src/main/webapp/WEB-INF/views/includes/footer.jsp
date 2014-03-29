@@ -1,6 +1,6 @@
 <div id="footer">
 	<div class="container">
-		<p class="text-muted">&copy; 2014 Todos os direitos reservados. Não temos responsabilidades pelos preços anunciado.</p>
+		<p class="text-muted">&copy; 2014 Todos os direitos reservados. Não nos responsabilizamos pelos preços aqui anunciados.</p>
 	</div>
 </div>
 
