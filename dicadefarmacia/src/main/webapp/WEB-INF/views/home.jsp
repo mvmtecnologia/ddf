@@ -1,36 +1,36 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-<jsp:include page="./includes/metahead.jsp" />
+
+<jsp:include page="./includes/header.jsp" />
+<link href="./resources/css/home.css" rel="stylesheet">
 </head>
+
 <body>
-	<!-- HEADER  -->
-	<jsp:include page="./includes/header.jsp" />
-	<!-- END HEADER -->
 
-	<!-- HEADER HOME  -->
-	<section id="home">
-		<div class="container">
-			<div class="row centered">
-				<h2 id="titulo"><spring:message code="home.h2.titulo.label" /></h2>
-			</div>
-			<div class="row centered">
-				<div class="span3"></div>
-				<div class="span6">
-					<form id="pesquisarForm" name="pesquisarForm" action="/s"
-						method="post">
-						<input id="palavraChavePesquisa" name="nome" type="text" placeholder=<spring:message code="home.input.palavrachavepesquisa.placeholder" /> />
-						<button id="pesquisar" name="pesquisar" type="submit"
-							class="button"><spring:message code="home.button.pesquisar.label" /></button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- END HEADER HOME  -->
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Dica de Farmácia</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-	<!-- FOOTER  -->
-	<jsp:include page="./includes/footer.jsp" />
-	<!-- END FOOTER -->
+    <!-- Begin page content -->
+    <div class="container">
+        <form class="form-home" role="form">
+            <h2 class="form-home-heading">Pequisar medicamento por</h2>
+            <input type="text" class="form-control" placeholder="nome, princípio ativo ou fabricante." required autofocus>
+        </form>
+    </div>
+
+    <jsp:include page="./includes/footer.jsp" />
+
 </body>
 </html>

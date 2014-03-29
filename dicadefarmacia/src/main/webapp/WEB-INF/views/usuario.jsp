@@ -3,12 +3,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="pt-br">
-<jsp:include page="./includes/metahead.jsp" />
+<jsp:include page="./includes/header.jsp" />
 </head>
 <body>
-	<!-- HEADER  -->
-	<jsp:include page="./includes/header.jsp" />
-	<!-- END HEADER -->
 
 	<section id="home">
 		<div class="container">

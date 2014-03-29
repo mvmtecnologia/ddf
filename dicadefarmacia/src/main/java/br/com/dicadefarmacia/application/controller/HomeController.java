@@ -27,6 +27,11 @@ public class HomeController {
 	public ModelAndView home(HttpServletResponse response) throws IOException {
 		return new ModelAndView(View.HOME);
 	}
+	
+	@RequestMapping(URL.LOGIN)
+	public ModelAndView login(HttpServletResponse response) throws IOException {
+		return new ModelAndView(View.LOGIN);
+	}
 
 	@RequestMapping(URL.SEARCH)
 	public ModelAndView search(String textsearch) throws IOException {
