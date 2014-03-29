@@ -9,6 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.dicadefarmacia.domain.Role;
 import br.com.dicadefarmacia.infra.dao.RoleDAO;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 @Service
 @Transactional
 public class RoleServiceImpl implements RoleService {

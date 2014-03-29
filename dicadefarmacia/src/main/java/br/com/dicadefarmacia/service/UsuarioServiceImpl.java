@@ -9,6 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.dicadefarmacia.domain.Usuario;
 import br.com.dicadefarmacia.infra.dao.UsuarioDAO;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 @Service
 @Transactional
 public class UsuarioServiceImpl implements UsuarioService {

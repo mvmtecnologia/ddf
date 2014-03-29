@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.dicadefarmacia.domain.Usuario;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 @Repository
 @Transactional
 public class UsuarioDAOImpl implements UsuarioDAO {

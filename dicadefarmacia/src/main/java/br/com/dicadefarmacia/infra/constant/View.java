@@ -1,5 +1,10 @@
 package br.com.dicadefarmacia.infra.constant;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 public final class View {
 
 	public static final String HOME = "home";

@@ -8,6 +8,11 @@ import java.util.List;
 
 import org.hibernate.transform.ResultTransformer;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 public class BeanToAliasTransformer implements ResultTransformer {
 
 	private Class<?> classe;
@@ -16,7 +21,7 @@ public class BeanToAliasTransformer implements ResultTransformer {
 		if (classe != null) {
 			this.classe = classe;
 		} else {
-			throw new NullPointerException("A classe n�o pode ser nula");
+			throw new NullPointerException("A classe não pode ser nula");
 		}
 	}
 

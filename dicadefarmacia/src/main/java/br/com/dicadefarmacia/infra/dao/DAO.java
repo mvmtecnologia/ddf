@@ -14,6 +14,11 @@ import br.com.dicadefarmacia.infra.utils.MensagensUtils;
 import br.com.dicadefarmacia.infra.utils.QueryUtils;
 import br.com.dicadefarmacia.infra.utils.StringUtils;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 public class DAO<E> {
 	
 	private Class<E> classeEntidade;

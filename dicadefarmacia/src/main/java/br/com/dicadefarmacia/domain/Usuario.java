@@ -15,7 +15,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * @author viniciussoliva
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
  */
 @Entity
 @Table(name="USUARIO")

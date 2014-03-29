@@ -1,5 +1,10 @@
 package br.com.dicadefarmacia.infra.utils;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 public class StringUtils extends org.apache.commons.lang3.StringUtils{
 	
 	public static String removePrefixo(String string, String remove){

@@ -19,6 +19,11 @@ import br.com.dicadefarmacia.domain.Farmacia;
 import br.com.dicadefarmacia.domain.Usuario;
 import br.com.dicadefarmacia.service.FarmaciaService;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 @Controller
 @Configuration
 @ComponentScan("br.com.dicadefarmacia.service")

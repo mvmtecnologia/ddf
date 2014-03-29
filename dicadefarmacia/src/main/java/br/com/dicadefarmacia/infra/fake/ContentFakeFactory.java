@@ -3,6 +3,11 @@ package br.com.dicadefarmacia.infra.fake;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 public class ContentFakeFactory {
 
 	public static Map<String, ContentFake>  createContentsFake(){

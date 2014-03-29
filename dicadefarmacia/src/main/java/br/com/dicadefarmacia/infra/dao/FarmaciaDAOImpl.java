@@ -9,6 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.dicadefarmacia.domain.Farmacia;
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 @Repository
 @Transactional
 public class FarmaciaDAOImpl implements FarmaciaDAO {

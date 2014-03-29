@@ -15,8 +15,9 @@ import br.com.dicadefarmacia.infra.constant.View;
 import br.com.dicadefarmacia.infra.fake.ContentFake;
 
 /**
- * @author viniciussoliva
- * 
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
  */
 @Controller
 @Configuration

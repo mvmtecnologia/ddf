@@ -1,6 +1,11 @@
 package br.com.dicadefarmacia.infra.utils;
 
 
+/**
+ * @author Marcus Soliva - viniciussoliva
+ * @author Matheus Cardoso - mtzimba
+ * @author Rodolfo Martins - furstmartins
+ */
 public class MensagensUtils {
 	public static final String FORM = "form";
 	public static final String INSERT_OK = "Registro gravado com sucesso!";
