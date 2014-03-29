@@ -26,7 +26,7 @@ public class UsuarioController {
 	@RequestMapping("/")
 	public String listUsuarios(Map<String, Object> map) {
 		map.put("usuario", new Usuario());
-		//map.put("usuarioList", usuarioService.listUsuario());
+		map.put("usuarioList", usuarioService.listUsuario());
 		System.out.println("passou aqui.........");
 		return "usuario";
 	}
