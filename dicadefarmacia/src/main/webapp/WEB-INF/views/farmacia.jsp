@@ -4,13 +4,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <html>
-	<head>
-		<title>Dica de Farmácia</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-		<link href="resources/css/application.css" rel="stylesheet">
-	</head>
+	<jsp:include page="./includes/metahead.jsp" />
+	
 	<body>
+		<!-- HEADER  -->
+		<jsp:include page="./includes/header.jsp" />
+		<!-- END HEADER -->
 
 		<h2>Cadastrar Farmácia</h2>
 		<form:form method="post" action="farmacia/add.html" commandName="farmacia">
@@ -135,7 +134,8 @@
 				</c:forEach>
 			</table>
 		</c:if>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="resources/js/bootstrap.min.js"></script>
 	</body>
+	<!-- FOOTER  -->
+	<jsp:include page="./includes/footer.jsp" />
+	<!-- END FOOTER -->
 </html>
