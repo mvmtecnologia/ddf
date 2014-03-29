@@ -16,89 +16,39 @@
     <!-- Begin page content -->
     <div class="container">
         <div class="row">
-            <h3>Cadastro de Usuário</h3>
-            <div class="col-md-6">
-                <form:form method="post" action="add.html" commandName="usuario"
-                    class="form-horizontal" role="form"
-                >
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">E-mail:</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="E-mail" required="required" autofocus="autofocus"
-                            >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nome" class="col-sm-2 control-label">Nome:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nome" name="nome"
-                                placeholder="Nome" required="required"
-                            >
-                        </div>
-                    </div>
+            <div class=".col-md-1">
+                <h3>Cadastro de Usuário</h3>
 
-                    <div class="form-group">
-                        <label for="cpf" class="col-sm-2 control-label">Cpf:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="cpf" name="cpf"
-                                placeholder="Cpf" required="required"
-                            >
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="senha" class="col-sm-2 control-label">Senha:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="senha" name="senha"
-                                placeholder="Senha" required="required"
-                            >
-                        </div>
-                    </div>
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Incluir</button>
 
-                    <div class="form-group">
-                        <label for="repetesenha" class="col-sm-2 control-label">Repete
-                            senha:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="repetesenha"
-                                name="repetesenha" placeholder="Repete senha" required="required"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Salvar</button>
-                        </div>
-                    </div>
-                </form:form>
+                <!-- Modal -->
+                <jsp:include page="./usuariomodal.jsp" />
             </div>
         </div>
-
+        <br>
         <div class="row">
             <div class=".col-md-1">
-                <c:if test="${!empty usuarioList}">
-                    <h3>Usuários</h3>
-                    <table class="table">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Email</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                        <th>Ações</th>
+                    </tr>
+                    <c:forEach items="${usuarioList}" var="usuario">
                         <tr>
-                            <th>Email</th>
-                            <th>Nome</th>
-                            <th>Cpf</th>
-                            <th>Ações</th>
+                            <td>${usuario.email}</td>
+                            <td>${usuario.nome}</td>
+                            <td>${usuario.cpf}</td>
+                            <td><a href="delete/${usuario.id}"><img
+                                    src="./resources/img/icons/delete.png" class="img-responsive"
+                                    alt="Apagar"
+                                ></a></td>
                         </tr>
-                        <c:forEach items="${usuarioList}" var="usuario">
-                            <tr>
-                                <td>${usuario.email}</td>
-                                <td>${usuario.nome}</td>
-                                <td>${usuario.cpf}</td>
-                                <td><a href="delete/${usuario.id}"><img
-                                        src="./resources/img/icons/delete.png"
-                                        class="img-responsive" alt="Apagar"
-                                    ></a></td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </c:if>
+                    </c:forEach>
+                </table>
             </div>
         </div>
     </div>
