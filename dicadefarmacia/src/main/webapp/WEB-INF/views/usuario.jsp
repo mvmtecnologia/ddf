@@ -19,8 +19,7 @@
             <div class=".col-md-1">
                 <h3>Cadastro de Usuário</h3>
 
-
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#usuarioModal">
                     Incluir</button>
 
                 <!-- Modal -->

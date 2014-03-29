@@ -1,12 +1,14 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="usuarioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true"
 >
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form:form method="post" action="add.html" commandName="usuario" class="form-horizontal"
-                role="form"
-            >
+    <form:form method="post" action="add.html" commandName="usuario" class="form-horizontal"
+        role="form"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Usuário</h4>
@@ -61,7 +63,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
-            </form:form>
+            </div>
         </div>
-    </div>
+    </form:form>
 </div>
