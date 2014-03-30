@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dicadefarmacia.domain.Usuario;
+import br.com.dicadefarmacia.infra.constant.URL;
 import br.com.dicadefarmacia.infra.constant.View;
 
 /**
@@ -23,7 +24,7 @@ import br.com.dicadefarmacia.infra.constant.View;
 @ComponentScan("br.com.dicadefarmacia.service")
 public class LoginController {
 
-	@RequestMapping(value = "/admin", method = RequestMethod.POST)
+	@RequestMapping(value = URL.ADMIN, method = RequestMethod.POST)
 	public ModelAndView admin(@ModelAttribute("usuario") Usuario usuario) throws IOException {
 		return new ModelAndView(View.ADMIN);
 		//return new ModelAndView(View.ADMIN_FARMACIA);

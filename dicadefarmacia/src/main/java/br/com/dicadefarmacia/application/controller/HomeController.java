@@ -24,7 +24,7 @@ import br.com.dicadefarmacia.infra.fake.ContentFake;
 @ComponentScan("br.com.dicadefarmacia.service")
 public class HomeController {
 
-	@RequestMapping(URL.ROOT)
+	@RequestMapping(URL.HOME)
 	public ModelAndView home(HttpServletResponse response) throws IOException {
 		return new ModelAndView(View.HOME);
 	}

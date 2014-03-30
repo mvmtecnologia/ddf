@@ -1,4 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <jsp:include page="./includes/header.jsp" />
 </head>
 
@@ -13,8 +14,7 @@
                 <h3>Área do administrador</h3>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="./">Home</a></li>
-                    <li><a href="./usuario">Usuário</a></li>
-                    <li><a href="./farmacia">Farmácia</a></li>
+                    <li><a href="./remedio">Remédio</a></li>
                 </ul>
             </div>
         </div>
