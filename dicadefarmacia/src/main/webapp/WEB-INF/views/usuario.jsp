@@ -28,8 +28,14 @@
                         <td>${usuario.email}</td>
                         <td>${usuario.nome}</td>
                         <td>${usuario.cpf}</td>
-                        <td><a href="usuario/delete/${usuario.id}">
-                            <span class="glyphicon glyphicon-remove"></span></a></td>
+                        <td>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                            <a href="usuario/delete/${usuario.id}">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>
