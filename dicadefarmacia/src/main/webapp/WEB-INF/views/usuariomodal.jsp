@@ -3,7 +3,7 @@
 <div class="modal fade" id="usuarioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true"
 >
-    <form:form method="post" action="add.html" commandName="usuario" class="form-horizontal"
+    <form:form method="post" action="usuario/add.html" commandName="usuario" class="form-horizontal"
         role="form"
     >
         <div class="modal-dialog">
