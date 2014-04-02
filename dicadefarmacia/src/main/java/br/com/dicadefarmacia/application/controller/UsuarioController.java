@@ -37,14 +37,14 @@ public class UsuarioController {
 		return "usuario";
 	}
 
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	@RequestMapping(value = "/usuario/add", method = RequestMethod.POST)
 	public String addUsuario(@ModelAttribute("usuario") Usuario usuario,
 			BindingResult result) {
 		usuarioService.addUsuario(usuario);
 		return "redirect:/";
 	}
 
-	@RequestMapping("/delete/{usuarioId}")
+	@RequestMapping("/usuario/delete/{usuarioId}")
 	public String deleteUsuario(@PathVariable("usuarioId") Long usuarioId) {
 		usuarioService.removeUsuario(usuarioId);
 		return "redirect:/";

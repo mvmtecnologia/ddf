@@ -28,7 +28,7 @@
                         <td>${usuario.email}</td>
                         <td>${usuario.nome}</td>
                         <td>${usuario.cpf}</td>
-                        <td><a href="/usuario/delete/${usuario.id}"><img
+                        <td><a href="${pageContext.request.contextPath}/usuario/delete/${usuario.id}"><img
                                 src="./resources/img/icons/delete.png" class="img-responsive"
                                 alt="Apagar"
                             ></a></td>
