@@ -44,13 +44,13 @@ public class FarmaciaController {
 	public String addFarmacia(@ModelAttribute("farmacia") Farmacia farmacia,
 			BindingResult result) {
 		farmaciaService.addFarmacia(farmacia);
-		return "redirect:/farmacia";
+		return "redirect:/";
 	}
 
 	@RequestMapping("/farmacia/delete/{farmaciaId}")
 	public String deleteFarmacia(@PathVariable("farmaciaId") Long farmaciaId) {
 		farmaciaService.removeFarmacia(farmaciaId);
-		return "redirect:/farmacia";
+		return "redirect:/";
 	}
 
 	@RequestMapping("/farmacia/edit/{farmaciaId}")

@@ -6,7 +6,7 @@
         <div>
             <h3>Cadastro de Usuário</h3>
 
-            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#usuarioModal">
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#usuarioModal">
                 Incluir</button>
 
             <!-- Modal -->

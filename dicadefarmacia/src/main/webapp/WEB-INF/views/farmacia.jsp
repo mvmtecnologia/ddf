@@ -6,7 +6,7 @@
         <div>
             <h3>Cadastro de Farmácias</h3>
 
-            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#usuarioModal">Incluir</button>
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#usuarioModal">Incluir</button>
 
             <!-- Modal -->
             <jsp:include page="farmaciamodal.jsp" />
