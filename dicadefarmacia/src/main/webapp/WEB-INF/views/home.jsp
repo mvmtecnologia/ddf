@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<jsp:include page="./includes/header.jsp" />
-<link href="./resources/css/home.css" rel="stylesheet">
+<jsp:include page="includes/header.jsp" />
+<link href="resources/css/home.css" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Fixed navbar -->
-    <jsp:include page="./includes/navbarcomlogin.jsp" />
+    <jsp:include page="includes/navbarcomlogin.jsp" />
 
     <!-- Begin page content -->
     <div class="container">
@@ -19,7 +19,7 @@
         </form>
     </div>
 
-    <jsp:include page="./includes/footer.jsp" />
+    <jsp:include page="includes/footer.jsp" />
 
 </body>
 </html>

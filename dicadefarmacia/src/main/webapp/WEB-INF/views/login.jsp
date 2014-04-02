@@ -1,14 +1,14 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<jsp:include page="./includes/header.jsp" />
+<jsp:include page="includes/header.jsp" />
 <!-- Custom styles for this template -->
-<link href="./resources/css/login.css" rel="stylesheet">
+<link href="resources/css/login.css" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Fixed navbar -->
-    <jsp:include page="./includes/navbarsemlogin.jsp" />
+    <jsp:include page="includes/navbarsemlogin.jsp" />
 
     <div class="container">
 
@@ -22,7 +22,7 @@
 
     </div>
 
-    <jsp:include page="./includes/footer.jsp" />
+    <jsp:include page="includes/footer.jsp" />
 
 </body>
 </html>

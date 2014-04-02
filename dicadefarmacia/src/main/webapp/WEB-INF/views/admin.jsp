@@ -1,11 +1,11 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<jsp:include page="./includes/header.jsp" />
+<jsp:include page="includes/header.jsp" />
 </head>
 
 <body>
 
     <!-- Fixed navbar -->
-    <jsp:include page="./includes/navbarsemlogin.jsp" />
+    <jsp:include page="includes/navbarsemlogin.jsp" />
 
     <div class="container">
         <div class="row">
@@ -22,16 +22,16 @@
         </div>
     </div>
 
-    <jsp:include page="./includes/footer.jsp" />
+    <jsp:include page="includes/footer.jsp" />
     
     <script type="text/javascript">
     	$("#linkUsuario").click(function(){
-            $("#content").load("./usuario");
+            $("#content").load("usuario");
             $("#menuFarmacia").removeClass("active");
             $("#menuUsuario").addClass("active");
         });
         $("#linkFarmacia").click(function(){
-            $("#content").load("./farmacia");
+            $("#content").load("farmacia");
             $("#menuUsuario").removeClass("active");
             $("#menuFarmacia").addClass("active");
         });

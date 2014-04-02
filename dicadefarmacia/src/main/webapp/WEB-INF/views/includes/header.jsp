@@ -6,19 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+<link rel="shortcut icon" href="assets/ico/favicon.ico">
 
 <title>Dica de Farmácia</title>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/bootstrap.css">
+	href="resources/css/bootstrap.css">
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/bootstrap-theme.min.css">
+	href="resources/css/bootstrap-theme.min.css">
 
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css"
-	href="./resources/css/sticky-footer-navbar.css">
+	href="resources/css/sticky-footer-navbar.css">
 
 <!-- Just for debugging purposes. Don't actually copy this line! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

@@ -9,7 +9,7 @@
             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#usuarioModal">Incluir</button>
 
             <!-- Modal -->
-            <jsp:include page="./farmaciamodal.jsp" />
+            <jsp:include page="farmaciamodal.jsp" />
         </div>
     </div>
     <br>
@@ -28,7 +28,7 @@
                         <td>${farma.contato}</td>
                         <td>${farma.endereco}</td>
                         <td><a href="/farmacia/delete/${farma.id}"><img
-                                src="./resources/img/icons/delete.png" class="img-responsive"
+                                src="resources/img/icons/delete.png" class="img-responsive"
                                 alt="Apagar"
                             ></a></td>
                         <!-- <td><a href="${pageContext.request.contextPath}/farmacia/edit/${farma.id}">editar</a></td> -->

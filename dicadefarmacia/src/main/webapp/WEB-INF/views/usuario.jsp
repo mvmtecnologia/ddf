@@ -10,7 +10,7 @@
                 Incluir</button>
 
             <!-- Modal -->
-            <jsp:include page="./usuariomodal.jsp" />
+            <jsp:include page="usuariomodal.jsp" />
         </div>
     </div>
     <br>
@@ -28,8 +28,8 @@
                         <td>${usuario.email}</td>
                         <td>${usuario.nome}</td>
                         <td>${usuario.cpf}</td>
-                        <td><a href="${pageContext.request.contextPath}/usuario/delete/${usuario.id}"><img
-                                src="./resources/img/icons/delete.png" class="img-responsive"
+                        <td><a href="usuario/delete/${usuario.id}"><img
+                                src="resources/img/icons/delete.png" class="img-responsive"
                                 alt="Apagar"
                             ></a></td>
                     </tr>
