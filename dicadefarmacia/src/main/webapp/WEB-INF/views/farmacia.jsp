@@ -27,10 +27,14 @@
                         <td>${farma.nome}</td>
                         <td>${farma.contato}</td>
                         <td>${farma.endereco}</td>
-                        <td><a href="/farmacia/delete/${farma.id}"><img
-                                src="resources/img/icons/delete.png" class="img-responsive"
-                                alt="Apagar"
-                            ></a></td>
+                        <td>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                            <a href="farmacia/delete/${farma.id}">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </td>
                         <!-- <td><a href="${pageContext.request.contextPath}/farmacia/edit/${farma.id}">editar</a></td> -->
                     </tr>
                 </c:forEach>
