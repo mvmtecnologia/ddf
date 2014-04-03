@@ -15,77 +15,18 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="nome" class="col-sm-3 control-label">Nome:</label>
+                        <label for="principioAtivo" class="col-sm-3 control-label">Princípio ativo:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="nome" name="nome"
+                            <input type="text" class="form-control input-sm" id="principioAtivo" name="principioAtivo"
                                 placeholder="Nome" required="required" autofocus="autofocus"
                             >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="telefone1" class="col-sm-3 control-label">Telefone 1:</label>
+                        <label for="dosagem" class="col-sm-3 control-label">Dosagem:</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="telefone1" name="telefone1"
-                                placeholder="Telefone 1" required="required"
-                            >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefone2" class="col-sm-3 control-label">Telefone 2:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="telefone2" name="telefone2"
-                                placeholder="Telefone 2" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="logradouro" class="col-sm-3 control-label">Logradouro:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="logradouro" name="logradouro"
-                                placeholder="Logradouro" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="numero" class="col-sm-3 control-label">Número:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="numero" name="numero"
-                                placeholder="Número" required="required"
-                            >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="complemento" class="col-sm-3 control-label">Complemento:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="complemento" name="complemento"
-                                placeholder="Complemento" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="cep" class="col-sm-3 control-label">Cep:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="cep" name="cep"
-                                placeholder="Cep" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="bairro" class="col-sm-3 control-label">Bairro:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="bairro" name="bairro"
-                                placeholder="Bairro" required="required"
-                            >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="cidade" class="col-sm-3 control-label">Cidade:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="cidade" name="cidade"
-                                placeholder="Cidade" required="required">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="estado" class="col-sm-3 control-label">Estado:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control input-sm" id="estado" name="estado"
-                                placeholder="Estado" required="required"
+                            <input type="text" class="form-control input-sm" id="dosagem" name="dosagem"
+                                placeholder="Dosagem" required="required"
                             >
                         </div>
                     </div>
