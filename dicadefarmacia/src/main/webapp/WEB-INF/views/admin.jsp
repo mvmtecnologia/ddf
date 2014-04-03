@@ -14,6 +14,7 @@
                 <ul id="menu" class="nav nav-pills nav-stacked">
                     <li id="menuUsuario"><a id="linkUsuario">Usuário</a></li>
                     <li id="menuFarmacia"><a id="linkFarmacia">Farmácia</a></li>
+                    <li id="menuRemedio"><a id="linkRemedio">Remédio</a></li>
                 </ul>
             </div>
             <div class="col-md-9" id="content">
@@ -27,13 +28,21 @@
     <script type="text/javascript">
     	$("#linkUsuario").click(function(){
             $("#content").load("usuario");
-            $("#menuFarmacia").removeClass("active");
             $("#menuUsuario").addClass("active");
+            $("#menuFarmacia").removeClass("active");
+            $("#menuRemedio").removeClass("active");
         });
         $("#linkFarmacia").click(function(){
             $("#content").load("farmacia");
             $("#menuUsuario").removeClass("active");
             $("#menuFarmacia").addClass("active");
+            $("#menuRemedio").removeClass("active");
+        });
+        $("#linkRemedio").click(function(){
+            $("#content").load("remedio");
+            $("#menuUsuario").removeClass("active");
+            $("#menuFarmacia").removeClass("active");
+            $("#menuRemedio").addClass("active");
         });
     </script>
 

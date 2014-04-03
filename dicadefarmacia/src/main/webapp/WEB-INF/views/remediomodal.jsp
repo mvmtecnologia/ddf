@@ -1,9 +1,9 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!-- Modal -->
-<div class="modal fade" id="farmaciaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="remedioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true"
 >
-    <form:form method="post" action="farmacia/add.html" commandName="farmacia" class="form-horizontal"
+    <form:form method="post" action="remedio/add.html" commandName="remedio" class="form-horizontal"
         role="form"
     >
         <div class="modal-dialog">
@@ -11,7 +11,7 @@
 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Farmácia</h4>
+                    <h4 class="modal-title" id="myModalLabel">Remédio</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
