@@ -189,7 +189,7 @@ public class Farmacia {
 			endereco.append(" - ");
 		}
 		if (StringUtils.isNotEmpty(getEstado())) {
-			endereco.append(getBairro());
+			endereco.append(getEstado());
 		}
 
 		return endereco.toString();

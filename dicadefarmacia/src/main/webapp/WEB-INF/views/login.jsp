@@ -12,11 +12,12 @@
 
     <div class="container">
 
+
         <form:form class="form-signin" method="post" action="admin.html" commandName="usuario"
             role="form"
         >
-            <input type="email" class="form-control" placeholder="E-mail" required autofocus>
-            <input type="password" class="form-control" placeholder="Senha" required>
+            <input type="email" class="form-control" name="email" placeholder="E-mail" required autofocus>
+            <input type="password" class="form-control" name="senha" placeholder="Senha" required>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
         </form:form>
 

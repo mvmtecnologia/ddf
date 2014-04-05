@@ -18,8 +18,22 @@
                         <label for="principioAtivo" class="col-sm-3 control-label">Princípio ativo:</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control input-sm" id="principioAtivo" name="principioAtivo"
-                                placeholder="Nome" required="required" autofocus="autofocus"
+                                placeholder="Princípio ativo" required="required" autofocus="autofocus"
                             >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeCompleto" class="col-sm-3 control-label">Nome:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control input-sm" id="nomeCompleto" name="nomeCompleto"
+                                placeholder="Nome" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeFabricante" class="col-sm-3 control-label">Fabricante:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control input-sm" id="nomeFabricante" name="nomeFabricante"
+                                placeholder="Fabricante" required="required">
                         </div>
                     </div>
                     <div class="form-group">

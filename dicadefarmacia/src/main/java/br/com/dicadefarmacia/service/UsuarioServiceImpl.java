@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.dicadefarmacia.domain.Usuario;
 import br.com.dicadefarmacia.infra.dao.UsuarioDAO;
+import br.com.dicadefarmacia.infra.utils.StringUtils;
 
 /**
  * @author Marcus Soliva - viniciussoliva
@@ -19,8 +20,8 @@ import br.com.dicadefarmacia.infra.dao.UsuarioDAO;
 public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
-    private UsuarioDAO usuarioDAO;
-	
+	private UsuarioDAO usuarioDAO;
+
 	@Override
 	public void addUsuario(Usuario usuario) {
 		usuarioDAO.addUsuario(usuario);
@@ -39,6 +40,51 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public void updateUsuario(Usuario usuario) {
 		usuarioDAO.updateUsuario(usuario);
+	}
+
+	@Override
+	public Boolean usuarioLoginValido(Usuario usuario) {
+
+		if(usuarioNuloOuVazio(usuario)){
+			return false;
+		}
+		
+		Usuario usuarioSalvo = usuarioDAO.getUsuarioPorEmail(usuario.getEmail()
+				.trim());
+
+		if(usuarioNuloOuVazio(usuarioSalvo)){
+			return false;
+		}
+
+		if (!usuario.getEmail().equalsIgnoreCase(usuarioSalvo.getEmail())) {
+			return false;
+		} else {
+			if (usuario.getSenha().equals(usuarioSalvo.getSenha())) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Verifica se o usuário é nulo ou se as variaveis
+	 * email e senha são nulas ou vazias.
+	 * 
+	 * @param usuario
+	 * @return <code>true</code> se usuário <code>null</code> ou vazio. <code>false</code> caso contrário.
+	 */
+	private Boolean usuarioNuloOuVazio(Usuario usuario) {
+		if (usuario == null) {
+			return true;
+		}
+
+		if (StringUtils.isBlank(usuario.getEmail())
+				|| StringUtils.isBlank(usuario.getSenha())) {
+			return true;
+		}
+		
+		return false;
 	}
 
 }

@@ -2,6 +2,7 @@ package br.com.dicadefarmacia.application.controller;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.dicadefarmacia.domain.Usuario;
 import br.com.dicadefarmacia.infra.constant.URL;
 import br.com.dicadefarmacia.infra.constant.View;
+import br.com.dicadefarmacia.service.UsuarioService;
 
 /**
  * @author Marcus Soliva - viniciussoliva
@@ -24,9 +26,17 @@ import br.com.dicadefarmacia.infra.constant.View;
 @ComponentScan("br.com.dicadefarmacia.service")
 public class LoginController {
 
+	@Autowired
+	private UsuarioService usuarioService;
+	
 	@RequestMapping(value = URL.ADMIN, method = RequestMethod.POST)
 	public ModelAndView admin(@ModelAttribute("usuario") Usuario usuario) throws IOException {
-		return new ModelAndView(View.ADMIN);
-		//return new ModelAndView(View.ADMIN_FARMACIA);
+		
+		if(usuarioService.usuarioLoginValido(usuario)){
+			return new ModelAndView(View.ADMIN);
+			//return new ModelAndView(View.ADMIN_FARMACIA);
+		}
+		
+		return new ModelAndView(View.LOGIN);
 	}
 }

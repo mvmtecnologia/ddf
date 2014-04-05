@@ -17,16 +17,18 @@
         <div class=".col-md-1">
             <table class="table table-bordered">
                 <tr>
+                    <th>Princípio ativo</th>
                     <th>Nome</th>
-                    <th>Contato</th>
-                    <th>Endereço</th>
+                    <th>Fabricante</th>
+                    <th>Dosagem</th>
                     <th class="col-md-1">Ações</th>
                 </tr>
                 <c:forEach items="${remedioLista}" var="remedio">
                     <tr>
-                        <td>${remedio.nome}</td>
-                        <td>${remedio.contato}</td>
-                        <td>${remedio.endereco}</td>
+                        <td>${remedio.principioAtivo}</td>
+                        <td>${remedio.nomeCompleto}</td>
+                        <td>${remedio.nomeFabricante}</td>
+                        <td>${remedio.dosagem}</td>
                         <td>
                             <a href="#">
                                 <span class="glyphicon glyphicon-pencil"></span>

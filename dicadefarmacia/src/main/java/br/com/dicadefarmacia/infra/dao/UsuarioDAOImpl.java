@@ -54,7 +54,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	
 	@Override
 	@SuppressWarnings("unchecked")
-	public Usuario getUsuarioByEmail(String email) {
+	public Usuario getUsuarioPorEmail(String email) {
 		List<Usuario> userList = new ArrayList<>();  
         Query query = openSession().createQuery("from Usuario u where u.email = :email");  
         query.setParameter("email", email);  

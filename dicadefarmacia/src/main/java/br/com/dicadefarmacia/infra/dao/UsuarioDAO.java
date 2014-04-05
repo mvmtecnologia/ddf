@@ -15,5 +15,5 @@ public interface UsuarioDAO {
     public List<Usuario> listUsuario();
     public void removeUsuario(Long id);
     public void updateUsuario(Usuario usuario);
-    public Usuario getUsuarioByEmail(String email);
+    public Usuario getUsuarioPorEmail(String email);
 }

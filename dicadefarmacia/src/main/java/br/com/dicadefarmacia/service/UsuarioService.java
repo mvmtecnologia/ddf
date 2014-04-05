@@ -15,4 +15,5 @@ public interface UsuarioService {
     public List<Usuario> listUsuario();
     public void removeUsuario(Long id);
     public void updateUsuario(Usuario usuario);
+    public Boolean usuarioLoginValido(Usuario usuario);
 }
