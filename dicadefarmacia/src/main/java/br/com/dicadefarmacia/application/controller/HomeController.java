@@ -1,18 +1,22 @@
 package br.com.dicadefarmacia.application.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.dicadefarmacia.dto.RemedioFarmaciaDTO;
 import br.com.dicadefarmacia.infra.constant.URL;
 import br.com.dicadefarmacia.infra.constant.View;
 import br.com.dicadefarmacia.infra.fake.ContentFake;
+import br.com.dicadefarmacia.service.RemedioService;
 
 /**
  * @author Marcus Soliva - viniciussoliva
@@ -24,6 +28,9 @@ import br.com.dicadefarmacia.infra.fake.ContentFake;
 @ComponentScan("br.com.dicadefarmacia.service")
 public class HomeController {
 
+	@Autowired
+	private RemedioService remedioService;
+	
 	@RequestMapping(URL.HOME)
 	public ModelAndView home(HttpServletResponse response) throws IOException {
 		return new ModelAndView(View.HOME);
@@ -37,10 +44,16 @@ public class HomeController {
 	@RequestMapping(URL.SEARCH)
 	public ModelAndView search(String textsearch) throws IOException {
 
-		ContentFake contentFake = ContentFake.findByName(textsearch);
-		System.out.println("contentFake: " + contentFake);
+		List<RemedioFarmaciaDTO> listaRemedio = remedioService.getRemedio(textsearch);
+		System.out.println(listaRemedio);
 		
-		return new ModelAndView(View.LIST_CONTENT, "contentFakes", ContentFake.findAll());
+		
+//		ContentFake contentFake = ContentFake.findByName(textsearch);
+//		System.out.println("contentFake: " + contentFake);
+//		
+//		return new ModelAndView(View.LIST_CONTENT, "contentFakes", ContentFake.findAll());
+		
+		return new ModelAndView(View.LIST_CONTENT, "remedioList", listaRemedio);
 	}
 
 }

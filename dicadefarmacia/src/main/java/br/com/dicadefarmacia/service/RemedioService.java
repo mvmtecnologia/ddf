@@ -3,6 +3,7 @@ package br.com.dicadefarmacia.service;
 import java.util.List;
 
 import br.com.dicadefarmacia.domain.Remedio;
+import br.com.dicadefarmacia.dto.RemedioFarmaciaDTO;
 
 /**
  * @author Marcus Soliva - viniciussoliva
@@ -18,5 +19,7 @@ public interface RemedioService {
 	public void removeRemedio(Long id);
 
 	public void updateRemedio(Remedio remedio);
+	
+	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio);
 
 }

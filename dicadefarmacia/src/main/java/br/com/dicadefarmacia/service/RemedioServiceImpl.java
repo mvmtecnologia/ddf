@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.dicadefarmacia.domain.Remedio;
+import br.com.dicadefarmacia.dto.RemedioFarmaciaDTO;
 import br.com.dicadefarmacia.infra.dao.RemedioDAO;
 
 /**
@@ -35,5 +36,9 @@ public class RemedioServiceImpl implements RemedioService {
 
 	public void updateRemedio(Remedio remedio) {
 		remedioDAO.updateRemedio(remedio);
+	}
+	
+	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio) {
+		return remedioDAO.getRemedio(nomeRemedio);
 	}
 }

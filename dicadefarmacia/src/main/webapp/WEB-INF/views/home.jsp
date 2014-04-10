@@ -13,9 +13,9 @@
 
     <!-- Begin page content -->
     <div class="container">
-        <form class="form-home" role="form">
+        <form class="form-home" action="s" role="form">
             <h2 class="form-home-heading">Pequisar medicamento por</h2>
-            <input type="text" class="form-control" placeholder="nome, princípio ativo ou fabricante." required autofocus>
+            <input type="text" name="textsearch" class="form-control" placeholder="nome, princípio ativo ou fabricante." required autofocus>
         </form>
     </div>
 
