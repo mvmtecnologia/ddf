@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.dicadefarmacia.domain.Remedio;
 import br.com.dicadefarmacia.dto.RemedioFarmaciaDTO;
 import br.com.dicadefarmacia.infra.utils.BeanToAliasTransformer;
+import br.com.dicadefarmacia.infra.utils.StringUtils;
 
 /**
  * @author Marcus Soliva - viniciussoliva
@@ -92,9 +93,15 @@ public class RemedioDAOImpl implements RemedioDAO {
 			.append("	INNER JOIN REMEDIOFARMACIA RF ON REM.ID = RF.id_remedio ")
 			.append("	INNER JOIN FARMACIA FARM ON FARM.ID = RF.ID_FARMACIA ")
 			.append(" WHERE ")
-			.append("	UPPER(REM.NOME_COMPLETO) LIKE :nome ");
+			.append("	UPPER(REM.NOME_COMPLETO) LIKE :nome ")
+			.append(" ORDER BY ")
+			.append("	RF.PRECO ");
 		Query query = openSession().createSQLQuery(sb.toString());
-		query.setParameter("nome", "%" + nomeRemedio.toUpperCase() + "%");
+		if (StringUtils.isNuloOuBranco(nomeRemedio)) {
+			query.setParameter("nome", "%");
+		} else {
+			query.setParameter("nome", "%" + nomeRemedio.toUpperCase() + "%");
+		}
 		
 		query.setResultTransformer(BeanToAliasTransformer.aliasToBean(RemedioFarmaciaDTO.class));
 		

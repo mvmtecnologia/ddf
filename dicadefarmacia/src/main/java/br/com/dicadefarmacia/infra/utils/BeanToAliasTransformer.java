@@ -67,7 +67,7 @@ public class BeanToAliasTransformer implements ResultTransformer {
 					filho = PropertyUtils.getPropriedadeAtributo(filho, props[j]);
 				} else {
 					aux = objetos[i];
-					if (objetos[i].getClass() == String.class) {
+					if (aux != null && objetos[i].getClass() == String.class) {
 						PropertyUtils.setPropriedade(filho, props[j], aux);
 					
 					} else if (PropertyUtils.getReturnType(filho, props[j]) == Integer.class) {
@@ -93,8 +93,8 @@ public class BeanToAliasTransformer implements ResultTransformer {
 						PropertyUtils.setPropriedade(filho, props[j],
 								new BigInteger(aux.toString()));
 						
-					} else if (objetos[i].getClass() == Date.class
-							|| objetos[i].getClass() == Timestamp.class) {
+					} else if (aux != null && (objetos[i].getClass() == Date.class
+							|| objetos[i].getClass() == Timestamp.class)) {
 						PropertyUtils.setPropriedade(filho, props[j], aux);
 					}
 

@@ -43,16 +43,12 @@ public class HomeController {
 
 	@RequestMapping(URL.SEARCH)
 	public ModelAndView search(String textsearch) throws IOException {
-
 		List<RemedioFarmaciaDTO> listaRemedio = remedioService.getRemedio(textsearch);
-		System.out.println(listaRemedio);
-		
-		
-//		ContentFake contentFake = ContentFake.findByName(textsearch);
-//		System.out.println("contentFake: " + contentFake);
-//		
-//		return new ModelAndView(View.LIST_CONTENT, "contentFakes", ContentFake.findAll());
-		
+		if (listaRemedio != null && listaRemedio.size() > 2) {
+			RemedioFarmaciaDTO rem1 = listaRemedio.get(0);
+			RemedioFarmaciaDTO rem2 = listaRemedio.get(listaRemedio.size()-1);
+			System.out.println(rem2.getPreco() - rem1.getPreco());
+		}
 		return new ModelAndView(View.LIST_CONTENT, "remedioList", listaRemedio);
 	}
 
