@@ -13,6 +13,7 @@ public final class URL {
 	public static final String HOME = "/";
 	public static final String LOGIN = "/login";
 	public static final String SEARCH = "s";
+	public static final String FILTRO = "filtro";
 	/**
 	 * Login
 	 */

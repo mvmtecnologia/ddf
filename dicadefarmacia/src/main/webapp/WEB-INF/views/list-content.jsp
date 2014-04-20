@@ -16,7 +16,7 @@
 			<div class="col-md-9">
 					
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3" style="display: none;">
 				<img alt="forma de exibição" src="resources/img/lista.jpg" width="22" height="22">
 				<img alt="forma de exibição" src="resources/img/grade.jpg" width="22" height="22">
 			</div>
@@ -25,21 +25,43 @@
 			<div class="col-md-2">
 				<div class="row">
 					<span class="titleFiltro">Preço</span>
-					<div id="slider"></div>
+					<br>
+					<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" class="margemFiltro">
+					<div id="slider" style="width: 70%; margin-left: 20px;"></div>
+					<input id="valorMaximo" value="${valorFinal}" hidden="true" />
+					<br>
 				</div>
 				<div class="row">
-					<span class="titleFiltro">Forma</span>
+					<span class="titleFiltro">Forma:</span>
+					<c:forEach items="${listaForma}" var="forma">
+						<div class="row margemFiltro">
+							<input type="checkbox" id="${forma}" onclick="filtraForma('${forma}')" /> ${forma}
+						</div>
+					</c:forEach>
+					<br>
 				</div>
 				<div class="row">
 					<span class="titleFiltro">Dosagem</span>
+					<c:forEach items="${listaDosagem}" var="dosagem">
+						<div class="row margemFiltro">
+							<input type="checkbox" id="${dosagem}" /> ${dosagem}
+						</div>
+					</c:forEach>
+					<br>
 				</div>
 				<div class="row">
 					<span class="titleFiltro">Laboratório</span>
+					<c:forEach items="${listaLaboratorio}" var="laboratorio">
+						<div class="row margemFiltro">
+							<input type="checkbox" id="${laboratorio}" /> ${laboratorio}
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 			<div class="col-md-8">
+				<div id="divResultado">
 				<c:forEach items="${remedioList}" var="remedio">
-					<div class="row linhaRemedio" style="padding-top: 6px;">
+					<div class="row linhaRemedio" style="padding-top: 6px; cursor: pointer;">
 						<div class="col-md-2" style="text-align: center;">
 							<img alt="remedio" src="resources/img/remedio_trans.png" width="70" height="70">
 						</div>
@@ -53,30 +75,18 @@
 						</div>
 					</div>
 				</c:forEach>
+				</div>
 			</div>
 			<div class="col-md-2"></div>
 		</div>
 	</div>
 
 	<jsp:include page="includes/footer.jsp" />
+	<script src="resources/js/pesquisa.js"></script>
 	
-	<script type="text/javascript">
-		var limpaSelecionado = function() {
-			$('.linhaRemedio').each(function(index){
-				$(this).css("background-color", "");
-				$(this).css("-webkit-border-radius", "0px");
-				$(this).css("-moz-border-radius", "0px");
-				$(this).css("border-radius", "0px");
-				
-			});
-		};
-		$('.linhaRemedio').click(function() {
-			limpaSelecionado();
-			$(this).css("background-color", "aquamarine");
-			$(this).css("-webkit-border-radius", "7px");
-			$(this).css("-moz-border-radius", "7px");
-			$(this).css("border-radius", "7px");
-		});
+	<script type="text/javascript">		
+		
+		
 	</script>
 </body>
 </html>

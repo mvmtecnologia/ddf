@@ -19,6 +19,8 @@
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css"
 	href="resources/css/sticky-footer-navbar.css">
+<link rel="stylesheet" type="text/css"
+	href="resources/css/jquery-ui-1.10.4.custom.min.css">
 
 <!-- Just for debugging purposes. Don't actually copy this line! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

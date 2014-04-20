@@ -26,7 +26,7 @@ public class RemedioFarmacia implements Serializable {
 	@GeneratedValue
 	private Long id;
 	
-	@Column(name = "PRECO")
+	@Column(name = "PRECO", nullable = false)
 	private Double preco;
 	
 	@Column(name = "PRECO_PROMOCAO")
