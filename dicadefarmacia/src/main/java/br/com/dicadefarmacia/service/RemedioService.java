@@ -21,5 +21,7 @@ public interface RemedioService {
 	public void updateRemedio(Remedio remedio);
 	
 	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio);
+	
+	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio, String[] forma, String[] dosagem, String[] laboratorio, Double vlrMin, Double vlrMax);
 
 }

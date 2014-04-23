@@ -41,4 +41,8 @@ public class RemedioServiceImpl implements RemedioService {
 	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio) {
 		return remedioDAO.getRemedio(nomeRemedio);
 	}
+	
+	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio, String[] forma, String[] dosagem, String[] laboratorio, Double vlrMin, Double vlrMax) {
+		return remedioDAO.getRemedio(nomeRemedio, forma, dosagem, laboratorio, vlrMin, vlrMax);
+	}
 }

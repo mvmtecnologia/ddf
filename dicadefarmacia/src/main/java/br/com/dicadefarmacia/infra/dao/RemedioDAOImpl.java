@@ -66,8 +66,14 @@ public class RemedioDAOImpl implements RemedioDAO {
 //	}
 	
 	@Override
-	@SuppressWarnings("unchecked")
 	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio) {
+		return getRemedio(nomeRemedio, null, null, null, null, null);
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<RemedioFarmaciaDTO> getRemedio(String nomeRemedio, String[] forma, String[] dosagem, 
+					String[] laboratorio, Double vlrMin, Double vlrMax) {
 		StringBuilder sb = new StringBuilder();
 		sb
 			.append(" SELECT ")
@@ -93,7 +99,20 @@ public class RemedioDAOImpl implements RemedioDAO {
 			.append("	INNER JOIN REMEDIOFARMACIA RF ON REM.ID = RF.id_remedio ")
 			.append("	INNER JOIN FARMACIA FARM ON FARM.ID = RF.ID_FARMACIA ")
 			.append(" WHERE ")
-			.append("	UPPER(REM.NOME_COMPLETO) LIKE :nome ")
+			.append("	UPPER(REM.NOME_COMPLETO) LIKE :nome ");
+		if (forma != null && forma.length > 0) {
+			sb.append("	AND REM.FORMA in (:forma) ");
+		}
+		if (dosagem != null && dosagem.length > 0) {
+			sb.append("	AND REM.DOSAGEM in (:dosagem) ");
+		}
+		if (laboratorio != null && laboratorio.length > 0) {
+			sb.append("	AND REM.NOME_FABRICANTE in (:laboratorio) ");
+		}
+		if (vlrMin != null && vlrMax != null) {
+			sb.append("	AND COALESCE(RF.PRECO_PROMOCAO, RF.PRECO) BETWEEN :vlrMin AND :vlrMax ");
+		}
+		sb
 			.append(" ORDER BY ")
 			.append("	RF.PRECO ");
 		Query query = openSession().createSQLQuery(sb.toString());
@@ -101,6 +120,19 @@ public class RemedioDAOImpl implements RemedioDAO {
 			query.setParameter("nome", "%");
 		} else {
 			query.setParameter("nome", "%" + nomeRemedio.toUpperCase() + "%");
+		}
+		if (forma != null && forma.length > 0) {
+			query.setParameterList("forma", forma);
+		}
+		if (dosagem != null && dosagem.length > 0) {
+			query.setParameterList("dosagem", dosagem);
+		}
+		if (laboratorio != null && laboratorio.length > 0) {
+			query.setParameterList("laboratorio", laboratorio);
+		}
+		if (vlrMin != null && vlrMax != null) {
+			query.setParameter("vlrMin", vlrMin);
+			query.setParameter("vlrMax", vlrMax);
 		}
 		
 		query.setResultTransformer(BeanToAliasTransformer.aliasToBean(RemedioFarmaciaDTO.class));

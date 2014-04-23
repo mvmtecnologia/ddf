@@ -35,7 +35,7 @@
 					<span class="titleFiltro">Forma:</span>
 					<c:forEach items="${listaForma}" var="forma">
 						<div class="row margemFiltro">
-							<input type="checkbox" id="${forma}" onclick="filtraForma('${forma}')" /> ${forma}
+							<input type="checkbox" id="${forma}" onclick="filtra()" class="forma" /> ${forma}
 						</div>
 					</c:forEach>
 					<br>
@@ -44,7 +44,7 @@
 					<span class="titleFiltro">Dosagem</span>
 					<c:forEach items="${listaDosagem}" var="dosagem">
 						<div class="row margemFiltro">
-							<input type="checkbox" id="${dosagem}" /> ${dosagem}
+							<input type="checkbox" id="${dosagem}" onclick="filtra()" class="dosagem" /> ${dosagem}
 						</div>
 					</c:forEach>
 					<br>
@@ -53,7 +53,7 @@
 					<span class="titleFiltro">Laboratório</span>
 					<c:forEach items="${listaLaboratorio}" var="laboratorio">
 						<div class="row margemFiltro">
-							<input type="checkbox" id="${laboratorio}" /> ${laboratorio}
+							<input type="checkbox" id="${laboratorio}" onclick="filtra()" class="laboratorio" /> ${laboratorio}
 						</div>
 					</c:forEach>
 				</div>
@@ -61,7 +61,7 @@
 			<div class="col-md-8">
 				<div id="divResultado">
 				<c:forEach items="${remedioList}" var="remedio">
-					<div class="row linhaRemedio" style="padding-top: 6px; cursor: pointer;">
+					<div class="row linhaRemedio" onclick="seleciona(this)" style="padding-top: 6px; cursor: pointer;">
 						<div class="col-md-2" style="text-align: center;">
 							<img alt="remedio" src="resources/img/remedio_trans.png" width="70" height="70">
 						</div>
