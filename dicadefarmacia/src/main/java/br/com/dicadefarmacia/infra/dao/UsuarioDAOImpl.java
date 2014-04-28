@@ -7,6 +7,9 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +22,7 @@ import br.com.dicadefarmacia.domain.Usuario;
  */
 @Repository
 @Transactional
-public class UsuarioDAOImpl implements UsuarioDAO {
+public class UsuarioDAOImpl implements UsuarioDAO, UserDetailsService {
 
 	@Autowired
     private SessionFactory sessionFactory;
@@ -65,5 +68,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         
         return null;
 		
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username)
+			throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		
+		return null;
 	}
 }

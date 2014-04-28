@@ -55,7 +55,6 @@ public class RemedioController {
 	public String update(@ModelAttribute("editRemedio") Remedio remedio,
 			BindingResult result, SessionStatus status) {
 		// validator.validate(remedio, result);
-		System.out.println("----------> " + remedio);
 		if (result.hasErrors()) {
 			return "editRemedio";
 		}

@@ -33,7 +33,6 @@ public class UsuarioController {
 	public String listUsuarios(Map<String, Object> map) {
 		map.put("usuario", new Usuario());
 		map.put("usuarioList", usuarioService.listUsuario());
-		System.out.println("passou aqui.........");
 		return "usuario";
 	}
 
@@ -53,7 +52,6 @@ public class UsuarioController {
 	@RequestMapping("/client")
 	public String redirecionaCliente() {
 
-		System.out.println("passou aqui.........");
 		return "client";
 	}
 }

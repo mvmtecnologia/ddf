@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import br.com.dicadefarmacia.infra.utils.StringUtils;
+
 /**
  * @author Marcus Soliva - viniciussoliva
  * @author Matheus Cardoso - mtzimba
@@ -107,4 +109,12 @@ public class Usuario implements Serializable {
 		this.farmacias = farmacias;
 	}
 
+	
+	@Override
+	public String toString() {
+		return StringUtils
+				 .normalizaToString("id=",this.id,
+						 "cpf=",this.cpf,
+						 "nome=",this.nome);
+	}
 }

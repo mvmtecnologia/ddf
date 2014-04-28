@@ -73,4 +73,15 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils{
 		return false;
 	}
 
+	public static String normalizaToString(Object...objects){
+		
+		final StringBuilder builder = new StringBuilder();
+		
+		for (Object o : objects) {
+			builder.append(o);
+		}
+		
+		return builder.toString();
+	}
+	
 }

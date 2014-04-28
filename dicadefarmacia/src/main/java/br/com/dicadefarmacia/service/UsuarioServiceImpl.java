@@ -2,6 +2,8 @@ package br.com.dicadefarmacia.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.dicadefarmacia.domain.Usuario;
 import br.com.dicadefarmacia.infra.dao.UsuarioDAO;
 import br.com.dicadefarmacia.infra.utils.StringUtils;
+import static br.com.dicadefarmacia.infra.constant.Message.Logger.INICIO_METODO;
+import static br.com.dicadefarmacia.infra.constant.Message.Logger.FINAL_METODO;;
 
 /**
  * @author Marcus Soliva - viniciussoliva
@@ -19,31 +23,51 @@ import br.com.dicadefarmacia.infra.utils.StringUtils;
 @Transactional
 public class UsuarioServiceImpl implements UsuarioService {
 
+	private static final Logger LOG = LoggerFactory.getLogger(UsuarioServiceImpl.class);
+	
 	@Autowired
 	private UsuarioDAO usuarioDAO;
 
 	@Override
 	public void addUsuario(Usuario usuario) {
+		LOG.info(INICIO_METODO+usuario);
+
 		usuarioDAO.addUsuario(usuario);
+		
+		LOG.info(FINAL_METODO+usuario);
 	}
 
 	@Override
 	public List<Usuario> listUsuario() {
-		return usuarioDAO.listUsuario();
+		LOG.info(INICIO_METODO);
+		
+		final List<Usuario> listUsuario = usuarioDAO.listUsuario();
+		
+		LOG.info(FINAL_METODO + listUsuario);
+		return listUsuario;
 	}
 
 	@Override
 	public void removeUsuario(Long id) {
+		LOG.info(INICIO_METODO+id);
+		
 		usuarioDAO.removeUsuario(id);
+		
+		LOG.info(FINAL_METODO+id);
 	}
 
 	@Override
 	public void updateUsuario(Usuario usuario) {
+		LOG.info(INICIO_METODO+usuario);
+
 		usuarioDAO.updateUsuario(usuario);
+
+		LOG.info(FINAL_METODO+usuario);
 	}
 
 	@Override
 	public Boolean usuarioLoginValido(Usuario usuario) {
+		LOG.info(INICIO_METODO+usuario);
 
 		if(usuarioNuloOuVazio(usuario)){
 			return false;
@@ -63,6 +87,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 				return true;
 			}
 		}
+		LOG.info(FINAL_METODO+usuario);
 
 		return false;
 	}
@@ -75,6 +100,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 	 * @return <code>true</code> se usuário <code>null</code> ou vazio. <code>false</code> caso contrário.
 	 */
 	private Boolean usuarioNuloOuVazio(Usuario usuario) {
+		
+		LOG.info(INICIO_METODO+usuario);
 		if (usuario == null) {
 			return true;
 		}
@@ -83,7 +110,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 				|| StringUtils.isBlank(usuario.getSenha())) {
 			return true;
 		}
-		
+		LOG.info(FINAL_METODO+usuario);
+
 		return false;
 	}
 

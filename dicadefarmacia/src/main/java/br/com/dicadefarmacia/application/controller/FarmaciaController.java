@@ -67,7 +67,6 @@ public class FarmaciaController {
 	public String update(@ModelAttribute("editFarmacia") Farmacia farmacia,
 			BindingResult result, SessionStatus status) {
 		// validator.validate(farmacia, result);
-		System.out.println("----------> " + farmacia);
 		if (result.hasErrors()) {
 			return "editFarmacia";
 		}

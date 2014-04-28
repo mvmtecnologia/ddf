@@ -9,8 +9,16 @@
         </layout>
     </appender>
 
-    <category name="org.springframework.security">
+    <category name="org.springframework">
         <priority value="DEBUG" />
+    </category>
+
+    <category name="org.springframework">
+        <priority value="INFO" />
+    </category>
+
+    <category name="br.com.dicadefarmacia">
+        <priority value="INFO" />
     </category>
 
     <root>

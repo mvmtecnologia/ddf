@@ -4,8 +4,8 @@
 
 <body>
 
-    <!-- Fixed navbar -->
-    <jsp:include page="includes/navbarsemlogin.jsp" />
+    <!-- TODO: não precisa mas disso ! 2 includes-->
+    <jsp:include page="includes/navbarcomlogin.jsp" />
 
     <div class="container">
         <div class="row">
